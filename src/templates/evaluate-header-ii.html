@@ -1,0 +1,47 @@
+    <table class="table table-bordered">
+        <thead>
+            <tr>          
+            <th scope="col">Student Name</th>
+            <th style="color: #31708f">                
+                 {{user.first_name}} {{user.last_name}}                
+            </th>
+            <th scope="col">Registration Number</th>
+            <th style="color: #31708f">
+                {{user.username}}
+            </th>
+            </tr>
+        </thead>
+    </table>
+    
+
+    <h6 class="text-center">SEMESTER: SEP - DECEMBER 2019</h6>
+
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>          
+            <th scope="col">Lecturer | Unit &amp; Code</th>
+            <th>
+                <select name="unit">
+                    <option value="">---Select Lecturer &amp; Unit---</option>
+                        {% for unit in registered_units %}
+                            <option value="{{ unit.unit_id }}#{{unit.lecturer_id}}#{{unit.lecturer}}">{{ unit.unit }} | {{ unit.lecturer }}</option>
+                         {% endfor %}                                           
+                </select>     
+                       
+            </th>
+            </tr>
+        </thead>
+    </table>
+
+
+    
+   
+
+<style>
+    select{
+        border: none;
+        color: #264392;
+        font-weight: bolder;
+    }
+</style>

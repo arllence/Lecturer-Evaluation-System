@@ -1,0 +1,424 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<section class="container evaluate">
+
+	{% include "evaluate-header.html" %}
+    
+    <form action="{% url 'section-two' %}" method="POST">
+        {% csrf_token %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>          
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Strongly disagree</th>
+                <th scope="col">Disagree</th>
+                <th scope="col">Neutral</th>
+                <th scope="col">Agree</th>
+                <th scope="col">Strongly Agree</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <div style="margin: 0; padding: 0">
+                            <span id="msg" style="margin: 0; padding: 0"></span>
+                            The Lecturer is panctual for classes
+                        </div>
+                        
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio"  onclick="reset_msg()" id="section2a1" name="section-2-a" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio"  onclick="reset_msg()" id="section2a2" name="section-2-a" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio"  onclick="reset_msg()" id="section2a3" name="section-2-a" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio"  onclick="reset_msg()" id="section2a4" name="section-2-a" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio"  onclick="reset_msg()" id="section2a5" name="section-2-a" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>
+                        <span id="msg2" style="margin: 0; padding: 0"></span>
+                        The Lecturer has well organized presentation that stimulates interest in the unit
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2b1" name="section-2-b" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2b2" name="section-2-b" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2b3" name="section-2-b" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2b4" name="section-2-b" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2b5" name="section-2-b" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>
+                        <span id="msg3" style="margin: 0; padding: 0"></span>
+                        The Lecturer makes use of relevant examples and illustrations to explain principles and concepts
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2c1" name="section-2-c" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2c2" name="section-2-c" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2c3" name="section-2-c" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2c4" name="section-2-c" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2c5" name="section-2-c" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>
+                        <span id="msg4" style="margin: 0; padding: 0"></span>
+                        The notes / handouts given by the lecture are relevant
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2d1" name="section-2-d" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2d2" name="section-2-d" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2d3" name="section-2-d" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2d4" name="section-2-d" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2d5" name="section-2-d" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>
+                        <span id="msg5" style="margin: 0; padding: 0"></span>
+                        The Lecturer demonstrates mastery of the unit content
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2e1" name="section-2-e" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2e2" name="section-2-e" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2e3" name="section-2-e" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2e4" name="section-2-e" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2e5" name="section-2-e" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>
+                        <span id="msg6" style="margin: 0; padding: 0"></span>
+                        The Lecturer facilitates class discission and allows student participation and questions
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2f1" name="section-2-f" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2f2" name="section-2-f" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2f3" name="section-2-f" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2f4" name="section-2-f" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2f5" name="section-2-f" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>
+                        <span id="msg7" style="margin: 0; padding: 0"></span>
+                        The Lecturer exposes the student to more practical work in relation to job market expections
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2g1" name="section-2-g" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2g2" name="section-2-g" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2g3" name="section-2-g" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2g4" name="section-2-g" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2g5" name="section-2-g" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>
+                        <span id="msg8" style="margin: 0; padding: 0"></span>
+                        The Lecturer covers unit syllabus as per the course outline</td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2h1" name="section-2-h" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2h1" name="section-2-h" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2h1" name="section-2-h" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2h1" name="section-2-h" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2h1" name="section-2-h" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>
+                        <span id="msg9" style="margin: 0; padding: 0"></span>
+                        The Lecturer is available for consultation after class
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2i1" name="section-2-i" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2i1" name="section-2-i" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2i1" name="section-2-i" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2i1" name="section-2-i" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2i1" name="section-2-i" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>
+                        <span id="msg10" style="margin: 0; padding: 0"></span>
+                        The Lecturer is approachable by students</td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2j1" name="section-2-j" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2j1" name="section-2-j" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2j1" name="section-2-j" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2j1" name="section-2-j" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2j1" name="section-2-j" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>
+                        <span id="msg11" style="margin: 0; padding: 0"></span>
+                        The Lecturer has intergration of ICT in the learning process
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2k1" name="section-2-k" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2k1" name="section-2-k" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2k1" name="section-2-k" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2k1" name="section-2-k" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2k1" name="section-2-k" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>
+                        <span id="msg12" style="margin: 0; padding: 0"></span>
+                        The Lecturer provides enhancement of creativity and innovativeness among the students
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2l1" name="section-2-l" id="" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2l1" name="section-2-l" id="" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2l1" name="section-2-l" id="" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2l1" name="section-2-l" id="" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section2l1" name="section-2-l" id="" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="hidden" name="lecturer_id" value="{{lecturer_id}}">
+        <input type="hidden" name="unit_id" value="{{unit_id}}">
+        <div class="text-center">
+            <!-- <a href="{% url 'evaluate-section-iii' %}"> -->
+                <button class="btn btn-primary btn-sx" type="submit" onclick="return send();">Next</button>
+            <!-- </a> -->
+        </div>
+    </form>
+
+    
+</section>
+
+{%endblock %}

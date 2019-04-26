@@ -1,0 +1,68 @@
+.navbar{
+    background-color: #264392 !important;
+}
+
+.nav-link a{
+    color: #fff !important;
+}
+.navbar img{
+    height: 60px;
+    margin-right: 6px;
+}
+
+.navbar .dropdown-menu{
+    float: right !important;
+}
+
+.bg{
+    min-height: 100vh;
+    background-image: url('../images/default.jpg');
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    padding: 0;
+    /* margin-top: -100px; */
+    /* filter: blur(0px); */
+    /* -webkit-filter: blur(3px); */
+}
+
+.evaluate table img{
+    height: 90px !important;
+}
+
+.evaluate table th{
+    vertical-align: middle;
+    text-align: center;
+}
+
+.evaluate table td{
+    vertical-align: middle;
+}
+
+.evaluate h6{
+    padding: 30px;
+}
+
+.evaluate form button{
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin-top: 20px;
+    margin-bottom: 50px;
+    background: #264392;
+    border: 3px solid silver;
+    padding: 4px 50px;
+    border-radius: 20px;
+    /* text-align: center; */
+
+}
+
+
+
+@media (max-width: 768px) {
+    .container{
+      width: 100% !important;
+      /* margin: auto; */
+      /* text-align: center; */
+    }    
+}

@@ -1,0 +1,38 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Bobbie Kings and KingdomplusInc contributors">
+
+    <title>Zetech | Lecturer Evaluation</title>
+      
+        
+    {% load static %}
+    <link rel="icon" type="image/x-icon" href="{% static "images/logo.png" %}">	
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/custom.css" %}">
+    <script src="{% static "js/check.js" %}"></script>
+
+    </head>
+
+    <body>
+
+    {% include "navbar.html" %}
+
+    <br><br><br>
+
+    {% block content %}   
+
+    {%endblock %}
+
+    {% load static %}
+    <script src="{% static "js/app.js" %}"></script>
+    <script src="{% static "js/jquery.min.js" %}"></script>    
+    <script src="{% static "js/bootstrap.min.js" %}"></script> 
+    
+    {% include "footer.html" %}
+    </body>
+</html>

@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<section class="container evaluate">
+
+	{% include "evaluate-header.html" %}
+    
+    <form action="{% url 'section-three' %}" method="POST">
+        {% csrf_token %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>          
+                <th scope="col"></th>
+                <th scope="col" colspan="2"><strong>Rate the quality of services on the following departments:</strong></th>
+                <th scope="col">Strongly disagree</th>
+                <th scope="col">Disagree</th>
+                <th scope="col">Neutral</th>
+                <th scope="col">Agree</th>
+                <th scope="col">Strongly Agree</th>
+                </tr>
+            </thead>
+            <tbody>                
+                <tr>
+                    <td>1</td>
+                    <td rowspan="2" class="text-center"><strong>ICT</strong></td>
+                    <td>
+                        <span id="msg" style="margin: 0; padding: 0"></span>
+                        Strength of the internet services is good
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-a" id="section3a1" value="1" >
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-a" id="section3a2" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-a" id="section3a3" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-a" id="section3a4" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-a" id="section3a5" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                 <tr>
+                    <td>2</td>
+                    <td>
+                        <span id="msg2" style="margin: 0; padding: 0"></span>
+                        All computer labs are well serviced
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-b" id="section3b1" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-b" id="section3b2" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-b" id="section3b3" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-b" id="section3b4" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-b" id="section3b5" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                 <tr>
+                    <td>3</td>
+                    <td rowspan="3" class="text-center"><strong>Examination Office</strong></td>
+                    <td>
+                        <span id="msg3" style="margin: 0; padding: 0"></span>
+                        There is timely release of of result
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-c" id="section3c1" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-c" id="section3c2" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-c" id="section3c3" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-c" id="section3c4" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-c" id="section3c5" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                 <tr>
+                    <td>4</td>
+                    <td>
+                        <span id="msg4" style="margin: 0; padding: 0"></span>
+                        There is timely release of result slips
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-d" id="section3d1" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-d" id="section3d2" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-d" id="section3d3" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-d" id="section3d4" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-d" id="section3d5" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                 <tr>
+                    <td>5</td>
+                    <td>
+                        <span id="msg5" style="margin: 0; padding: 0"></span>
+                        There is timely release of transcripts
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-e" id="section3e1" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-e" id="section3e2" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-e" id="section3e3" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-e" id="section3e4" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-e" id="section3e5" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td rowspan="2" class="text-center"><strong>Library</strong></td>
+                    <td>
+                        <span id="msg6" style="margin: 0; padding: 0"></span>
+                        The staff members are available to provide guidance
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-f" id="section3f1" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-f" id="section3f2" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-f" id="section3f3" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-f" id="section3f4" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-f" id="section3f5" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+                 <tr>
+                    <td>7</td>
+                    <td>
+                        <span id="msg7" style="margin: 0; padding: 0"></span>
+                        There is adequate and relevant referencing materials
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-g" id="section3g1" value="1">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-g" id="section3g2" value="2" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-g" id="section3g3" value="3">
+                        </div>           
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-g" id="section3g4" value="4" >
+                        </div>             
+                    </td>
+                    <td>
+                        <div class="text-center">
+                            <input class="form-radio-input" type="radio" onclick="reset_msg()" name="section-3-g" id="section3g5" value="5" >
+                        </div>             
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <!-- <a href="{% url 'evaluate-section-iv' %}"> -->
+                <button class="btn btn-primary btn-sx" type="submit"  onclick="return send2();">Next</button>
+            <!-- </a> -->
+        </div>
+    </form>
+
+    
+</section>
+
+{%endblock %}

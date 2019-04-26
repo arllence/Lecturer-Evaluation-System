@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<section class="container evaluate">
+
+	{% include "evaluate-header.html" %}
+
+    <form action="{% url 'section-one' %}" method="POST">
+        {% include "evaluate-header-ii.html" %}
+        {% csrf_token %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>          
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Yes</th>
+                <th scope="col">No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>1</td>
+                <td>
+                    <span id="msg" style="margin: 0; padding: 0"></span>
+                    The Lecturer provided students with course outline at the begining of the unit?
+                </td>
+                <td>
+                    <div class="text-center">
+                        <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section1a1" name="section-1-a" id="" value="Yes">
+                    </div>           
+                </td>
+                <td>
+                    <div class="text-center">
+                        <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section1a2" name="section-1-a" id="" value="No" >
+                    </div>             
+                </td>
+                </tr>
+                <tr>
+                <td>2</td>
+                <td>
+                    <span id="msg2" style="margin: 0; padding: 0"></span>
+                    The Lecturer administered CATs and Assignments in a timely manner?
+                </td>
+                <td>
+                    <div class="text-center">
+                        <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section1b1" name="section-1-b" id="" value="Yes">   
+                    </div>           
+                </td>
+                <td>
+                    <div class="text-center">
+                        <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section1b2" name="section-1-b" id="" value="No" >
+                    </div>
+                </td>
+                </tr>
+                <tr>
+                <td>3</td>
+                <td>
+                    <span id="msg3" style="margin: 0; padding: 0"></span>
+                    The Lecturer gave timely feedback on CATs and Assignments?
+                </td>
+                <td>
+                    <div class="text-center">
+                        <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section1c1" name="section-1-c" id="" value="Yes"> 
+                    </div>             
+                </td>
+                <td>
+                    <div class="text-center">
+                        <input class="form-radio-input" type="radio" onclick="reset_msg()" id="section1c2" name="section-1-c" id="" value="No" >
+                    </div>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center">
+            <!-- <a href="{% url 'evaluate-section-ii' %}"> -->
+                <button class="btn btn-primary btn-sx" type="submit"  onclick="return send3();">Next</button>
+            <!-- </a> -->
+        </div>
+    </form>
+
+    
+</section>
+
+{%endblock %}

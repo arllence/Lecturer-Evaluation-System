@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<section class="container evaluate">
+
+	{% load static %}
+    <link rel="stylesheet" href="{% static "css/signin.css" %}">
+
+    <br><br><br>
+
+    
+        {% for msg in form.error_messages %}    
+        <div class="alert alert-danger">        
+            {% comment %} {{ form.error_messages[msg] }}    {% endcomment %}
+        </div>         
+        {% endfor %}
+    
+
+    <form class="form-signin" method="post" action="{% url 'student-auth' %}">
+        {% csrf_token %}
+        <img class="mb-4" src="{% static "images/logo.png" %}" alt="logo" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <label for="inputRegno" class="sr-only">Registration Number</label>
+        <input type="text" id="inputRegno" class="form-control" placeholder="Registration Number" name="username" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+        <div class="checkbox mb-3">
+            <label>
+            <input type="checkbox" value="remember-me"> Remember me
+            </label>
+            </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+
+    
+</section>
+<br>
+{%endblock %}

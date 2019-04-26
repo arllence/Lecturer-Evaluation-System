@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<br>
+<section class="container evaluate">
+
+	{% include "evaluate-header.html" %}
+    
+    <h6 class="text-left">Comment on one strength and one area of improvement on the following:</h6>
+
+    <form action="{% url 'section-four' %}" method="POST">
+        {% csrf_token %}
+        <table class="table table-bordered">
+            <thead>
+                <tr>          
+                    <th scope="col">S/N</th>
+                    <th scope="col" class="text-left">Item</th>
+                    <th scope="col">Comment on the Strength</th>
+                    <th scope="col">Areas of improvement</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <tr>
+                    <td class="text-center">1</td>
+                    <td><input type="hidden" name="Lecturer" value="Lecturer">Lecturer</td>
+                    <td>
+                        <textarea style="border: none;" style="border: none;" class="form-control comment" rows="3" name="lecturer-comment-a" autofocus required></textarea>
+                    </td>
+                    <td>
+                        <textarea style="border: none;" class="form-control comment" rows="3" name="lecturer-comment-b" autofocus required></textarea>
+                    </td>
+                </tr>   
+                <tr>
+                    <td class="text-center">2</td>
+                    <td><input type="hidden" name="ICT" value="ICT">ICT</td>
+                    <td>
+                        <textarea style="border: none;" class="form-control comment" rows="3" name="ict-comment-a" autofocus required></textarea>
+                    </td>
+                    <td>
+                        <textarea style="border: none;" class="form-control comment" rows="3" name="ict-comment-b" autofocus required></textarea>
+                    </td>
+                </tr> 
+                <tr>
+                    <td class="text-center">3</td>
+                    <td><input type="hidden" name="Examination-Office" value="Examination-Office">Examination Office</td>
+                    <td>
+                        <textarea style="border: none;" class="form-control comment" rows="3" name="exam-comment-a" autofocus required></textarea>
+                    </td>
+                    <td>
+                        <textarea style="border: none;" class="form-control comment" rows="3" name="exam-comment-b" autofocus required></textarea>
+                    </td>
+                </tr>  
+                <tr>
+                    <td class="text-center">4</td>
+                    <td><input type="hidden" name="Library" value="Library">Library</td>
+                    <td>
+                        <textarea style="border: none;" class="form-control comment" rows="3" name="library-comment-a" autofocus required></textarea>
+                    </td>
+                    <td>
+                        <textarea style="border: none;" class="form-control comment" rows="3" name="library-comment-b" autofocus required></textarea>
+                    </td>
+                </tr>  
+            </tbody>
+        </table>
+        <br>
+        <div  class="form-group">
+            <label for="comment">What would like to be improved on the genetral services offered in Zetech University?</label>
+            <textarea class="form-control" rows="5" id="comment" name="comment" autofocus required></textarea>
+        </div>
+
+        <h6 class="text-center">---Thank you for participating in this Survey---</h6>
+
+        <div class="text-center">
+            <!-- <a href="{% url 'home' %}"> -->
+                <button class="btn btn-primary btn-sx" type="submit">Finish</button>
+            <!-- </a> -->
+        </div>
+    </form>
+
+    
+</section>
+
+{%endblock %}
